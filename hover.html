@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Letter from the heart</title>
+    <style>
+body {
+  margin: 0 auto;
+  background: linear-gradient(45deg, #111, #333);
+/*       background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  	background-size: 400%;
+	animation: gradient 15s ease infinite;
+  height: 100vh;
+  display:grid;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: 200px 200px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+    justify-content: center;
+  align-content: center;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.div {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+    z-index: 5;
+  transition: .7s;
+     border-radius: 15px;
+}
+.div:hover {
+  text-shadow: 0px 0px 30px #ffffff99;
+}
+.div-text {
+  width: inherit;
+  height: inherit;
+   border-radius: 15px;
+  background: #ffffff10;
+  border: 1px solid #ffffff20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 20px;
+  position: absolute;
+  z-index: 5;
+  box-sizing: border-box;
+  text-transform: uppercase;
+}
+.div-shadow {
+  display: block;
+  content: '';
+  width: 0px;
+  height: 0px;
+  box-shadow: 0px 0px 100px 100px #ffffff20;
+  background: red;
+  position: absolute;
+  transition: opacity .7s;
+  opacity: 0;
+  z-index: -5;
+    filter: blur(10px);
+}
+.div-shadow.active {
+  opacity: 1;
+}
+</style>
+      </head>
+
+  <body>
+      <div class="div">
+  <div class="div-text">i</div>
+  <div class="div-shadow"></div>
+</div>
+<div class="div">
+  <div class="div-text">love</div>
+  <div class="div-shadow"></div>
+</div>
+<div class="div">
+  <div class="div-text">you</div>
+  <div class="div-shadow"></div>
+</div>
+<div class="div">
+  <div class="div-text">harshitha</div>
+  <div class="div-shadow"></div>
+</div>
+  </body>
+  <script>
+let divs = document.querySelectorAll(".div");
+divs.forEach((div) => {
+  
+let divShadow = div.querySelector(".div-shadow");
+
+div.addEventListener('mousemove', (event) => {
+  // Show the shadow
+  divShadow.classList.add("active");
+  
+  // Set shadow position to cursor position
+  divShadow.style.left = (event.clientX - div.offsetLeft)+"px";
+  divShadow.style.top = (event.clientY - div.offsetTop)+"px";
+});
+
+div.addEventListener('mouseout', (event) => {
+  // Show the shadow
+  divShadow.classList.remove("active");
+});
+  });
+
+    
+  </script>
+</html>
