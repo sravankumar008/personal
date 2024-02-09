@@ -1,0 +1,35 @@
+body {
+    background-color: pink;
+    margin: 50px;
+  }
+  
+.to {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 4rem;
+}
+
+
+.heart {
+    margin: 0 auto;
+    display: block;
+    width: 65%
+}
+.letter {
+    font-family: 'Lobster', sans-serif;   
+    text-align: center; 
+    font-size: 1.3rem; 
+    margin: 0 auto;
+    margin-top: -43%;
+    margin-left: 30%;
+    color: rgb(204,0,0);
+    width: 575px;
+}
+
+.from {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 4rem;
+    position: relative;
+    margin-top:300px;
+    margin-left: 90%;
+
+}
